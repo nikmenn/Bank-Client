@@ -1,0 +1,10 @@
+For our test plan we just wanted to be thorough and test minute details and also broad parts that will show us the overarching parts of the program. For the small details we went over things that could generate the errors required. An example of this is to create an account with the same name more than once and that should generate an error and it does. And other errors such as creating more than 20 accounts, trying to create two accounts within 2 seconds, trying to start the same account at the same time within two different clients, etc. Generally we did this for a lot of things that we were told to account for in the directions. Also we tested to see if the server and client(s) were connecting properly multiple times in different ways. For the bigger parts(checking how the banking system works and what’s being printed in both the server and client windows) of the program we just used a lot of test cases that had similarities but had enough differences where we could see what our program was doing well across a client or multiple clients. In our test case file we have put test cases that show how we tested not only the broad parts but the intricacies as well.
+
+To run our program with your test cases:
+1. Open at least two terminal windows.
+2. Go into the directory in each window(cd asst4)
+3. In one of the windows enter in the command line “make all”
+4. In the same window as you wrote make all in write in the command line “./server”
+5. In the other window(s) write in the command line “./client nameofhostmachine”
+6. Now the client(s) should connect to the server—-the name of the host machine is the machine used to create the server(i.e top.cs.rutgers.edu is one of the machines we used when we tested our code)
+7. Now a prompt should be printed in the client window(s) and then if you follow the prompt it should work properly (information is printed in the server window periodically).

@@ -1,0 +1,140 @@
+Test Cases—-the outputs that I’m putting are displayed in the client window. We’re putting numbers next to the input just to make it look nicer but we’re not actually inputting “1.create Nikhil” rather “create Nikhil”
+
+Test Case 1:
+Just a normal session— One client connects to server
+
+Input: 
+1.create Nikhil
+2.start Nikhil
+3.credit 20
+4.debit 10
+5.balance 
+6.finish
+
+Output:
+1.The account was opened successfully
+2.You can now enter in commands related to the bank account
+3.20.00 was credited to your account
+4.10.00 was debited out of the account
+5.The balance is  10.00
+6.Finishing session
+
+
+Test Case 2:
+Try to open more than 20 accounts
+Input:
+1. create 1
+2. create 2
+3. create 3
+4. create 4
+.
+.
+.
+.
+20. create 20
+21. create 21
+
+Output:
+1. The account was opened successfully
+2. The account was opened successfully
+3. The account was opened successfully
+4. The account was opened successfully
+.
+.
+.
+.
+20. The account was opened successfully
+21. The bank cannot exceed more than 20 accounts
+
+
+Test Case 3:
+Try to create two accounts of the same name
+Input:
+1. create luck
+2. create luck
+
+Output:
+1. The account was opened successfully
+2. Account cannot be created because another account already exists with the same name
+
+Test Case 4:
+Try to start the same account at the same time(two different clients)
+Input:
+1. create random
+2. start random(one client window)
+3. start random(another client window)
+4. finish(in the first client window)
+
+Output(of client that started later):
+Another client is using this account wait until a prompt says you are in session
+Another client is using this account wait until a prompt says you are in session
+Another client is using this account wait until a prompt says you are in session
+.
+.
+.
+.
+Another client is using this account wait until a prompt says you are in session
+You can now enter in commands related to the bank account
+
+
+Test Case 5:
+Debit more than what is the balance of the account
+Input:
+1. create abc
+2. start abc
+3. credit 11
+4. debit 20
+5. balance 
+6. finish
+
+
+Output:
+1. The account was opened successfully
+2. You can now enter in commands related to the bank account
+3. 11.00 was credited to your account
+4. The amount you entered was greater than the current balance
+5. The balance is  11.00
+6. Finishing session
+
+Test Case 6:
+Start an account that hasn’t been created 
+Input: 
+1. start newyork
+ 
+Output:
+Entered bank account does not exist
+
+Enter finish to leave this prompt and return
+
+
+Test Case 7:
+Create an account, start the account, credit a value, finish, and come back to the account and see if the values are still the same
+
+Input:
+1. create xyz
+2. start xyz
+3. credit 30
+4. finish
+5. start xyz
+6. balance
+
+Output:
+1. The account was opened successfully
+2. You can now enter in commands related to the bank account
+3. 30.00 was credited to your account
+4. Finishing session
+5. You can now enter in commands related to the bank account
+6. The balance is  30.00
+
+Test Case 8: 
+Shutting down the server before closing the client
+
+Input(in server window): 
+^C 
+
+Output(in client window):
+Client has closed because the server has shut down
+
+
+
+All outputs went as expected.
